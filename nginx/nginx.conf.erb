@@ -1,0 +1,10 @@
+error_log /var/log/nginx/error.log debug;
+server {
+    location / {
+        proxy_pass http://localhost:80/;
+    }
+
+    location ~ \.(gif|jpg|png)$ {
+        root /data/images;
+    }
+}
